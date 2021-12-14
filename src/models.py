@@ -74,6 +74,23 @@ class Starships(db.Model):
 
         }
 
+
+# class FavoriteList(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+#     people_id = db.Column(db.Integer, db.ForeignKey('people.id'))
+#     user = db.relationship(User)
+#     people = db.relationship(People)
+
+#     def serialize(self):
+#         return {
+#             "id": self.id,
+#             "user_id":self.user_id,
+#             "people_id":self.people_id,
+            
+            
+#         }
+
 class FavoriteList(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
@@ -90,7 +107,7 @@ class FavoriteList(db.Model):
             "id": self.id,
             "user_id":self.user_id,
             "people_id":self.people_id,
-            "planets":self.planets,
+            "planets_id":self.planets_id,
             "starships_id": self.starships_id,
             
         }
